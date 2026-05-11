@@ -31,7 +31,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
             >
-              Friendly, professional hairdressing in Shipley.
+              Beautiful Hair, Beautiful You.
             </motion.p>
             <motion.p
               className="mt-2 text-base text-muted-foreground leading-relaxed"
@@ -39,7 +39,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
             >
-              Where every visit leaves you feeling beautiful and confident.
+              Professional hair care in Shipley, Bradford — braids, extensions, styling and more.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -50,7 +50,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               <Button asChild size="lg" className="rounded-full text-base transition-transform hover:scale-105">
-                <a href="tel:+441274123456">
+                <a href="tel:+447717163988">
                   <Phone className="w-5 h-5 mr-2" />
                   Call to Book
                 </a>

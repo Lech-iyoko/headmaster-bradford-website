@@ -17,7 +17,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="mt-4 text-sm text-background/70 leading-relaxed">
-              Friendly, professional hairdressing in Shipley. Making you feel beautiful, one style at a time.
+              Beautiful Hair, Beautiful You. Professional hair care at 68b Briggate, Shipley.
             </p>
           </div>
 
@@ -50,14 +50,14 @@ export function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 mt-0.5 text-background/70" />
                 <span className="text-sm text-background/70">
-                  Briggate, Shipley<br />
-                  West Yorkshire, BD17 7BP
+                  68b Briggate, Shipley<br />
+                  Bradford, BD17 5EP
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-background/70" />
-                <a href="tel:+441274123456" className="text-sm text-background/70 hover:text-background transition-colors">
-                  01274 123 4567
+                <a href="tel:+447717163988" className="text-sm text-background/70 hover:text-background transition-colors">
+                  07717 163988
                 </a>
               </div>
             </div>

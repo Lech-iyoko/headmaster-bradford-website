@@ -64,7 +64,7 @@ export function Header() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Button asChild size="default" className="rounded-full transition-transform hover:scale-105">
-              <a href="tel:+441onal234567">
+              <a href="tel:+447717163988">
                 <Phone className="w-4 h-4 mr-2" />
                 Call to Book
               </a>
@@ -109,7 +109,7 @@ export function Header() {
                   </motion.div>
                 ))}
                 <Button asChild size="lg" className="rounded-full mt-2">
-                  <a href="tel:+441274123456">
+                  <a href="tel:+447717163988">
                     <Phone className="w-4 h-4 mr-2" />
                     Call to Book
                   </a>

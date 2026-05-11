@@ -10,13 +10,13 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    details: ["Briggate", "Shipley", "West Yorkshire", "BD17 7BP"],
+    details: ["68b Briggate", "Shipley", "Bradford, BD17 5EP"],
   },
   {
     icon: Phone,
     title: "Phone",
-    details: ["01onal 123 4567"],
-    action: { href: "tel:+441274123456", label: "Tap to call" },
+    details: ["07717 163988"],
+    action: { href: "tel:+447717163988", label: "Tap to call" },
   },
   {
     icon: Clock,
@@ -90,7 +90,7 @@ export function Contact() {
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-full flex-1 transition-transform hover:scale-105">
                   <a
-                    href="https://wa.me/441274123456"
+                    href="https://wa.me/447717163988"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -106,7 +106,7 @@ export function Contact() {
           <FadeIn direction="left" duration={0.9}>
             <div className="relative rounded-2xl overflow-hidden h-80 lg:h-full min-h-[320px] bg-secondary">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2354.1234567890123!2d-1.7730!3d53.8330!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBriggate%2C%20Shipley!5e0!3m2!1sen!2suk!4v1234567890123!5m2!1sen!2suk"
+                src="https://maps.google.com/maps?q=68b+Briggate+Shipley+Bradford+BD17+5EP&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
