@@ -1,8 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Scissors, Palette, Heart } from "lucide-react"
-import { Stagger, StaggerItem } from "@/components/motion/fade-in"
+import { Scissors, Sparkles, Heart } from "lucide-react"
+import { FadeIn, Stagger, StaggerItem } from "@/components/motion/fade-in"
 
 const highlights = [
   {
@@ -11,9 +11,9 @@ const highlights = [
     description: "Years of expertise serving the Shipley community with skill and care.",
   },
   {
-    icon: Palette,
-    title: "Cuts, Colour & Styling",
-    description: "From classic cuts to vibrant colours, braids, and extensions.",
+    icon: Sparkles,
+    title: "Braids, Extensions & Styling",
+    description: "Specialists in braids, crochet, weaving extensions, and creative hairstyling.",
   },
   {
     icon: Heart,
@@ -26,6 +26,15 @@ export function Highlights() {
   return (
     <section className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-4">
+        {/* Intro — moved from old hero */}
+        <FadeIn className="text-center max-w-2xl mx-auto mb-14">
+          <p className="text-muted-foreground text-lg leading-relaxed">
+            Professional hair care at{" "}
+            <span className="text-primary">68b Briggate, Shipley</span>.
+            Braids, extensions, hairstyling, and treatments — all under one roof.
+          </p>
+        </FadeIn>
+
         <Stagger className="grid md:grid-cols-3 gap-8 md:gap-12" staggerDelay={0.15}>
           {highlights.map((item, index) => (
             <StaggerItem key={index} className="text-center group">

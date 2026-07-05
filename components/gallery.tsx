@@ -53,8 +53,16 @@ const galleryImages = [
     alt: "Braided sides with curly top",
   },
   {
+    src: "/gallery/p15.jpg",
+    alt: "Long feed-in braids with blonde ombre ends",
+  },
+  {
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/p14-o6X5nZ3eZ3vGByYgrrXDQW7egPeHf2.jpg",
     alt: "Platinum blonde straight hair",
+  },
+  {
+    src: "/gallery/p13.jpg",
+    alt: "Long sleek blonde straight hair",
   },
 ]
 

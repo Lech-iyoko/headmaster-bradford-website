@@ -83,7 +83,7 @@ export function Contact() {
             <StaggerItem>
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button asChild size="lg" className="rounded-full flex-1 transition-transform hover:scale-105">
-                  <a href="tel:+441274123456">
+                  <a href="tel:+447717163988">
                     <Phone className="w-5 h-5 mr-2" />
                     Call to Book
                   </a>

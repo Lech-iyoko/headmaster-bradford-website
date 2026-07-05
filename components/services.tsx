@@ -1,45 +1,34 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Scissors, Sparkles, Link2, Layers, Droplets } from "lucide-react"
 import { FadeIn, Stagger, StaggerItem } from "@/components/motion/fade-in"
 
 const services = [
   {
-    category: "Ladies&apos; Cuts & Styling",
-    items: [
-      { name: "Cut & Blow Dry", price: "From £35" },
-      { name: "Blow Dry / Styling", price: "From £20" },
-      { name: "Wash & Cut", price: "From £28" },
-      { name: "Fringe Trim", price: "£8" },
-    ],
+    icon: Scissors,
+    name: "Hairstyling",
+    description: "Expert cuts, blow dries, and creative styling tailored to you.",
   },
   {
-    category: "Colouring",
-    items: [
-      { name: "Full Head Colour", price: "From £55" },
-      { name: "Half Head Highlights", price: "From £50" },
-      { name: "Full Head Highlights", price: "From £75" },
-      { name: "Root Touch-Up", price: "From £40" },
-      { name: "Toner / Gloss", price: "From £25" },
-    ],
+    icon: Sparkles,
+    name: "Braids",
+    description: "Box braids, cornrows, and intricate braid styles crafted with precision.",
   },
   {
-    category: "Braids & Extensions",
-    items: [
-      { name: "Box Braids", price: "From £80" },
-      { name: "Cornrows", price: "From £40" },
-      { name: "Crochet Braids", price: "From £60" },
-      { name: "Weave Install", price: "From £50" },
-    ],
+    icon: Link2,
+    name: "Crochet Extensions",
+    description: "Full, natural-looking crochet installs for lasting volume and length.",
   },
   {
-    category: "Men & Children",
-    items: [
-      { name: "Men&apos;s Cut", price: "From £18" },
-      { name: "Children&apos;s Cut (under 12)", price: "From £15" },
-      { name: "Beard Trim", price: "From £10" },
-    ],
+    icon: Layers,
+    name: "Weaving Extensions",
+    description: "Seamless weave installs that blend beautifully with your natural hair.",
+  },
+  {
+    icon: Droplets,
+    name: "Hair Treatments",
+    description: "Nourishing treatments to restore shine, strength, and vitality.",
   },
 ]
 
@@ -49,50 +38,65 @@ export function Services() {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <FadeIn className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
+          <p className="text-primary text-xs font-medium tracking-[0.3em] uppercase mb-3">
+            What We Offer
+          </p>
           <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-4">
-            Services & Pricing
+            Our Services
           </h2>
           <p className="text-muted-foreground leading-relaxed">
-            From classic cuts to creative colours and intricate braids, we offer a full range of hair services tailored to you.
+            From everyday styling to specialist extensions and treatments — call us to discuss your needs and get a personalised quote.
           </p>
         </FadeIn>
 
-        {/* Services Grid */}
-        <Stagger className="grid md:grid-cols-2 gap-6 md:gap-8" staggerDelay={0.12}>
-          {services.map((service, index) => (
+        {/* Services Grid — 3 top, 2 bottom centred */}
+        <Stagger className="grid md:grid-cols-3 gap-6 md:gap-8" staggerDelay={0.1}>
+          {services.slice(0, 3).map((service, index) => (
             <StaggerItem key={index}>
-              <motion.div
-                whileHover={{ y: -6 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                className="h-full"
-              >
-                <Card className="bg-card border-border rounded-2xl overflow-hidden h-full transition-shadow hover:shadow-lg">
-                  <CardHeader className="bg-secondary/50 pb-4">
-                    <CardTitle className="text-xl font-serif text-foreground" dangerouslySetInnerHTML={{ __html: service.category }} />
-                  </CardHeader>
-                  <CardContent className="pt-4">
-                    <ul className="space-y-3">
-                      {service.items.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex justify-between items-center py-2 border-b border-border/50 last:border-0">
-                          <span className="text-foreground" dangerouslySetInnerHTML={{ __html: item.name }} />
-                          <span className="text-primary font-medium">{item.price}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              </motion.div>
+              <ServiceCard service={service} />
             </StaggerItem>
           ))}
         </Stagger>
 
-        {/* Note */}
-        <FadeIn delay={0.2}>
-          <p className="text-center text-sm text-muted-foreground mt-8 italic">
-            Prices may vary depending on hair length, thickness, and service complexity. Please contact us for a personalised quote.
+        <Stagger className="grid md:grid-cols-2 gap-6 md:gap-8 mt-6 md:mt-8 md:max-w-2xl md:mx-auto" staggerDelay={0.1}>
+          {services.slice(3).map((service, index) => (
+            <StaggerItem key={index}>
+              <ServiceCard service={service} />
+            </StaggerItem>
+          ))}
+        </Stagger>
+
+        {/* Pricing note */}
+        <FadeIn delay={0.3}>
+          <p className="text-center text-sm text-muted-foreground mt-10 italic">
+            Pricing varies by style, length, and complexity. Contact us for a personalised quote.
           </p>
         </FadeIn>
       </div>
     </section>
+  )
+}
+
+function ServiceCard({ service }: { service: (typeof services)[0] }) {
+  return (
+    <motion.div
+      whileHover={{ y: -6 }}
+      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      className="h-full"
+    >
+      <div className="h-full bg-card border border-border rounded-2xl p-8 flex flex-col gap-4 transition-colors hover:border-primary/40 group">
+        <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+          <service.icon className="w-5 h-5 text-primary" />
+        </div>
+        <div>
+          <h3 className="text-lg font-serif font-semibold text-foreground mb-2">
+            {service.name}
+          </h3>
+          <p className="text-muted-foreground text-sm leading-relaxed">
+            {service.description}
+          </p>
+        </div>
+      </div>
+    </motion.div>
   )
 }
