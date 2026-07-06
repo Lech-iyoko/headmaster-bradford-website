@@ -94,22 +94,8 @@ export function Hero() {
           <HairFlow />
         </div>
       </div>
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "linear-gradient(to right, var(--slbg) 32%, oklch(0.08 0.01 55 / 0.8) 52%, oklch(0.08 0.01 55 / 0.1) 80%)",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "linear-gradient(to top, var(--slbg) 0%, oklch(0.08 0.01 55 / 0.2) 28%, transparent 55%)",
-        }}
-      />
+      <div className="sl-hero-shade-x" />
+      <div className="sl-hero-shade-y" />
       <div
         className="glow-breathe"
         style={{

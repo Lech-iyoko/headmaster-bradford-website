@@ -27,9 +27,10 @@ export function Header() {
           href={WA_LINK}
           target="_blank"
           rel="noreferrer"
+          aria-label="Message on WhatsApp"
         >
           <WhatsAppIcon />
-          WhatsApp
+          <span className="wa-label">WhatsApp</span>
         </a>
         <a className="pg-btn pg-btn-dark" style={{ padding: "12px 22px" }} href={PHONE_HREF}>
           Book Now

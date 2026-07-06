@@ -220,7 +220,7 @@ html {
 .pg-head { display: flex; flex-direction: column; gap: 16px; margin-bottom: 56px; }
 
 /* ---------- buttons on light ---------- */
-.pg-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; padding: 15px 28px; font: 600 16px/1 var(--slsans); text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: transform 0.25s ease, background 0.25s ease; }
+.pg-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 999px; padding: 15px 28px; font: 600 16px/1 var(--slsans); white-space: nowrap; text-decoration: none; cursor: pointer; border: 1px solid transparent; transition: transform 0.25s ease, background 0.25s ease; }
 .pg-btn:hover { transform: scale(1.04); }
 .pg-btn-dark { background: var(--dark); color: oklch(0.95 0.015 80); }
 .pg-btn-gold { background: var(--acc); color: white; }
@@ -297,6 +297,8 @@ html {
 /* ---------- hero shell ---------- */
 .sl-hero { position: relative; height: 760px; overflow: hidden; }
 .sl-hero-photo { position: absolute; right: 0; top: 0; height: 100%; width: 58%; }
+.sl-hero-shade-x { position: absolute; inset: 0; background: linear-gradient(to right, var(--slbg) 32%, oklch(0.08 0.01 55 / 0.8) 52%, oklch(0.08 0.01 55 / 0.1) 80%); }
+.sl-hero-shade-y { position: absolute; inset: 0; background: linear-gradient(to top, var(--slbg) 0%, oklch(0.08 0.01 55 / 0.2) 28%, transparent 55%); }
 .sl-hero-content { position: relative; z-index: 10; height: 100%; display: flex; align-items: center; padding-left: 96px; }
 
 /* ============================================================
@@ -313,15 +315,20 @@ html {
 
 @media (max-width: 768px) {
   .pg-section { padding: 56px 22px; }
-  .pg-header { padding: 0 20px; height: 64px; }
-  .pg-logo { font-size: 21px; }
+  .pg-header { padding: 0 16px; height: 64px; gap: 10px; }
+  .pg-logo { font-size: 17px; white-space: nowrap; }
   .pg-nav { display: none; }
+  .pg-header .pg-btn { padding: 10px 14px !important; font-size: 14px; }
+  .wa-label { display: none; }
   .pg-footer { padding: 48px 22px 30px; }
   .pg-head { margin-bottom: 36px; }
 
   .sl-hero { height: 600px; }
   .sl-hero-photo { width: 100%; }
   .sl-hero-content { padding-left: 22px; padding-right: 22px; align-items: flex-end; padding-bottom: 44px; }
+  /* Full-bleed model photo on mobile: drop the desktop side shade, deepen the bottom fade for text legibility */
+  .sl-hero-shade-x { display: none; }
+  .sl-hero-shade-y { background: linear-gradient(to top, var(--slbg) 0%, oklch(0.08 0.01 55 / 0.55) 26%, transparent 60%); }
 
   .hl-grid, .about-grid, .offers-grid, .services-grid,
   .reviews-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; gap: 36px; }
