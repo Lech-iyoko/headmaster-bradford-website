@@ -285,6 +285,12 @@ html {
 .services-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 72px; max-width: 1040px; margin: 0 auto; }
 .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
+.reviews-stat { display: flex; align-items: center; justify-content: center; gap: 22px; margin: 0 auto 34px; }
+.reviews-stat-number { font-family: var(--slserif); font-weight: 600; font-size: clamp(52px, 7vw, 76px); line-height: 1; color: var(--acc); }
+.reviews-stat-label { font: 400 17px/1.5 var(--slsans); color: var(--ink); text-align: left; }
+.reviews-stat-label a { color: var(--acc); font-weight: 600; text-decoration: none; }
+.reviews-stat-label a:hover { text-decoration: underline; }
+.reviews-single { max-width: 640px; margin: 0 auto; text-align: center; }
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 64px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 64px; }
 

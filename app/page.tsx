@@ -5,6 +5,7 @@ import { About } from "@/components/about"
 import { Offers } from "@/components/offers"
 import { Services } from "@/components/services"
 import { Gallery } from "@/components/gallery"
+import { Reviews } from "@/components/reviews"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 
@@ -18,7 +19,7 @@ export default function Home() {
       <Offers />
       <Services />
       <Gallery />
-      {/* Reviews hidden until real customer reviews (from Facebook/Google) replace the placeholder ones */}
+      <Reviews />
       <Contact />
       <Footer />
     </div>

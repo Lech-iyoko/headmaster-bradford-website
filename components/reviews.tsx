@@ -1,19 +1,6 @@
 import { Reveal } from "@/components/reveal"
 
-const REVIEWS = [
-  {
-    q: "Julie transformed my hair — my knotless braids were neat, quick and pain-free. Best salon in Shipley by far.",
-    n: "Amara O.",
-  },
-  {
-    q: "Such a lovely, welcoming place. My weave looks completely natural and lasted for weeks. I wouldn't go anywhere else.",
-    n: "Sharon B.",
-  },
-  {
-    q: "Took my daughter for her first braids and Julie was so patient with her. Beautiful results — we'll be back!",
-    n: "Kelly W.",
-  },
-]
+const FB_PAGE = "https://www.facebook.com/profile.php?id=100028607544927"
 
 export function Reviews() {
   return (
@@ -24,15 +11,24 @@ export function Reviews() {
           <h2 className="pg-h2">What clients say</h2>
         </div>
       </Reveal>
-      <div className="reviews-grid">
-        {REVIEWS.map((r, i) => (
-          <Reveal key={i} delay={i * 0.1} className="tst-card">
-            <span className="tst-stars">★★★★★</span>
-            <p className="tst-quote">“{r.q}”</p>
-            <span className="tst-name">— {r.n}</span>
-          </Reveal>
-        ))}
-      </div>
+      <Reveal delay={0.1}>
+        <div className="reviews-stat">
+          <span className="reviews-stat-number">96%</span>
+          <span className="reviews-stat-label">
+            of clients recommend Julie
+            <br />
+            <a href={FB_PAGE} target="_blank" rel="noopener noreferrer">
+              from 24 reviews on Facebook
+            </a>
+          </span>
+        </div>
+      </Reveal>
+      <Reveal delay={0.2} className="tst-card reviews-single">
+        <p className="tst-quote">
+          “Headmaster is the best salon in Bradford. Their work is impeccable! They are gifted.”
+        </p>
+        <span className="tst-name">— Chychy Angel, via Facebook</span>
+      </Reveal>
     </section>
   )
 }
