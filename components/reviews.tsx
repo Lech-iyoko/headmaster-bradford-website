@@ -2,6 +2,22 @@ import { Reveal } from "@/components/reveal"
 
 const FB_PAGE = "https://www.facebook.com/profile.php?id=100028607544927"
 
+// Real Facebook reviews (lightly tidied for spelling/caps, wording unchanged)
+const REVIEWS = [
+  {
+    q: "Definitely found a new place to get my weave in — my hair looks gorgeous… The staff was very welcoming and polite. Great customer service. I left the shop a very satisfied customer.",
+    n: "Larelle Ellsworth",
+  },
+  {
+    q: "Been having my hair done at this fantastic place for the past 4 years… My weaves have been amazing and have lasted for three months! My hair has grown and is in great condition. Would never go anywhere else!",
+    n: "Rachael Keighley",
+  },
+  {
+    q: "Luv my daughter's hair — had so many people asking where she got it done. Beautiful results.",
+    n: "Dinky Campbell",
+  },
+]
+
 export function Reviews() {
   return (
     <section className="pg-section" id="reviews">
@@ -23,12 +39,14 @@ export function Reviews() {
           </span>
         </div>
       </Reveal>
-      <Reveal delay={0.2} className="tst-card reviews-single">
-        <p className="tst-quote">
-          “Headmaster is the best salon in Bradford. Their work is impeccable! They are gifted.”
-        </p>
-        <span className="tst-name">— Chychy Angel, via Facebook</span>
-      </Reveal>
+      <div className="reviews-grid">
+        {REVIEWS.map((r, i) => (
+          <Reveal key={r.n} delay={0.15 + i * 0.1} className="tst-card">
+            <p className="tst-quote">“{r.q}”</p>
+            <span className="tst-name">— {r.n}, via Facebook</span>
+          </Reveal>
+        ))}
+      </div>
     </section>
   )
 }
