@@ -4,18 +4,18 @@ import { Reveal } from "@/components/reveal"
 const HL_DATA = [
   {
     icon: <ScissorsIcon width={24} height={24} />,
-    title: "Experienced Local Stylist",
-    desc: "Years of expertise serving the Shipley community with skill and care.",
+    title: "10+ Years of Experience",
+    desc: "Over a decade of hairdressing expertise, from Bradford to the heart of Shipley.",
+  },
+  {
+    icon: <HeartIcon width={24} height={24} />,
+    title: "Every Hair Type Welcome",
+    desc: "From fine and straight to curls, coils and afro textures — Julie styles hair types 1 to 4.",
   },
   {
     icon: <SparklesIcon width={24} height={24} />,
     title: "Braids, Extensions & Styling",
     desc: "Specialists in braids, crochet, weaving extensions, and creative hairstyling.",
-  },
-  {
-    icon: <HeartIcon width={24} height={24} />,
-    title: "Welcoming & Relaxed",
-    desc: "A friendly salon where you can unwind and feel at home.",
   },
 ]
 
