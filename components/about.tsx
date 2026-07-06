@@ -1,53 +1,53 @@
-"use client"
-
-import Image from "next/image"
-import { FadeIn } from "@/components/motion/fade-in"
+import { IMG, PHONE_DISPLAY, PHONE_HREF, WA_LINK, PhoneIcon, WhatsAppIcon } from "@/components/salon-ui"
+import { Reveal } from "@/components/reveal"
 
 export function About() {
   return (
-    <section id="about" className="py-16 md:py-24 bg-secondary/30 scroll-mt-20 overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-          {/* Image */}
-          <FadeIn direction="right" duration={0.9}>
-            <div className="relative aspect-square md:aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/julie-Wo17DLcit9TQBJSn56AF9ZPgYCjUV6.jpg"
-                alt="Julie - Owner and Stylist"
-                fill
-                className="object-cover object-top transition-transform duration-700 hover:scale-105"
-              />
-            </div>
-          </FadeIn>
-
-          {/* Content */}
-          <FadeIn direction="left" duration={0.9} delay={0.15}>
-            <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-6">
-              Meet Julie
-            </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                Julie has been cutting and colouring hair in Shipley for years, building a loyal base of regular clients who come back for her friendly approach, attention to detail, and honest advice.
-              </p>
-              <p>
-                With a passion for making everyone feel welcome, Julie creates a relaxed, comfortable atmosphere where you can truly unwind while getting a style that suits you perfectly.
-              </p>
-              <p>
-                Whether you&apos;re after a simple trim, a bold new colour, intricate braids, or a complete transformation, Julie takes the time to listen and deliver exactly what you&apos;re looking for.
-              </p>
-            </div>
-
-            {/* Signature */}
-            <div className="mt-8 pt-6 border-t border-border">
-              <p className="font-serif text-xl text-foreground italic">
-                &quot;Your hair is my canvas, and I love what I do.&quot;
-              </p>
-              <p className="mt-2 text-sm text-muted-foreground">
-                — Julie, Owner & Stylist
-              </p>
-            </div>
-          </FadeIn>
-        </div>
+    <section className="pg-section" id="about">
+      <div className="about-grid">
+        <Reveal variant="left">
+          <div className="pg-head" style={{ marginBottom: 28 }}>
+            <p className="pg-eyebrow">Our Story</p>
+            <h2 className="pg-h2">Making Shipley look beautiful, one style at a time</h2>
+          </div>
+          <p className="pg-body" style={{ marginBottom: 18 }}>
+            At Julie&apos;s Hair Salon we celebrate every hair texture. From protective braids and crochet
+            styles to weaving extensions and nourishing treatments, every appointment starts with a personal
+            consultation — so you leave with a style that&apos;s truly yours.
+          </p>
+          <p className="pg-body" style={{ marginBottom: 32 }}>
+            You&apos;ll find us at 68b Briggate in the heart of Shipley: a warm, relaxed salon where you can
+            switch off, be looked after, and walk out feeling like the best version of you.
+          </p>
+          <div style={{ display: "flex", gap: 14, flexWrap: "wrap" }}>
+            <a className="pg-btn pg-btn-gold" href={PHONE_HREF}>
+              <PhoneIcon />
+              {PHONE_DISPLAY}
+            </a>
+            <a className="pg-btn pg-btn-line" href={WA_LINK} target="_blank" rel="noreferrer">
+              <WhatsAppIcon />
+              Message on WhatsApp
+            </a>
+          </div>
+        </Reveal>
+        <Reveal variant="right" delay={0.1} className="about-photos">
+          <div className="gal-tile" style={{ aspectRatio: "3 / 4" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={IMG.julie}
+              alt="Julie, your Shipley hair stylist"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 15%" }}
+            />
+          </div>
+          <div className="gal-tile" style={{ aspectRatio: "3 / 4", marginTop: 36 }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={IMG.p6}
+              alt="Elegant styling at Julie's Hair Salon"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
+            />
+          </div>
+        </Reveal>
       </div>
     </section>
   )

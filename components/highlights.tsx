@@ -1,59 +1,99 @@
-"use client"
+import { IMG, ScissorsIcon, SparklesIcon, HeartIcon } from "@/components/salon-ui"
+import { Reveal } from "@/components/reveal"
 
-import { motion } from "framer-motion"
-import { Scissors, Sparkles, Heart } from "lucide-react"
-import { FadeIn, Stagger, StaggerItem } from "@/components/motion/fade-in"
-
-const highlights = [
+const HL_DATA = [
   {
-    icon: Scissors,
+    icon: <ScissorsIcon width={24} height={24} />,
     title: "Experienced Local Stylist",
-    description: "Years of expertise serving the Shipley community with skill and care.",
+    desc: "Years of expertise serving the Shipley community with skill and care.",
   },
   {
-    icon: Sparkles,
+    icon: <SparklesIcon width={24} height={24} />,
     title: "Braids, Extensions & Styling",
-    description: "Specialists in braids, crochet, weaving extensions, and creative hairstyling.",
+    desc: "Specialists in braids, crochet, weaving extensions, and creative hairstyling.",
   },
   {
-    icon: Heart,
+    icon: <HeartIcon width={24} height={24} />,
     title: "Welcoming & Relaxed",
-    description: "A friendly salon where you can unwind and feel at home.",
+    desc: "A friendly salon where you can unwind and feel at home.",
   },
 ]
 
 export function Highlights() {
-  return (
-    <section className="py-16 md:py-24 bg-card">
-      <div className="container mx-auto px-4">
-        {/* Intro — moved from old hero */}
-        <FadeIn className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-muted-foreground text-lg leading-relaxed">
-            Professional hair care at{" "}
-            <span className="text-primary">68b Briggate, Shipley</span>.
-            Braids, extensions, hairstyling, and treatments — all under one roof.
-          </p>
-        </FadeIn>
+  const photo = (
+    <div style={{ position: "relative" }}>
+      <div
+        style={{
+          borderRadius: "200px 200px 16px 16px",
+          overflow: "hidden",
+          aspectRatio: "4 / 5",
+          boxShadow: "0 24px 50px -22px oklch(0.3 0.05 70 / 0.4)",
+        }}
+      >
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={IMG.p1}
+          alt="Signature styling at Julie's"
+          style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
+        />
+      </div>
+      <div
+        style={{
+          position: "absolute",
+          top: 16,
+          left: -16,
+          right: 16,
+          bottom: -16,
+          border: "1px solid var(--acc-soft)",
+          borderRadius: "210px 210px 20px 20px",
+          pointerEvents: "none",
+        }}
+      />
+    </div>
+  )
 
-        <Stagger className="grid md:grid-cols-3 gap-8 md:gap-12" staggerDelay={0.15}>
-          {highlights.map((item, index) => (
-            <StaggerItem key={index} className="text-center group">
-              <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-secondary mb-6 group-hover:bg-primary/10 transition-colors"
-                whileHover={{ scale: 1.1, rotate: -5 }}
-                transition={{ type: "spring", stiffness: 300, damping: 15 }}
-              >
-                <item.icon className="w-7 h-7 text-primary" />
-              </motion.div>
-              <h3 className="text-xl font-serif font-semibold text-foreground mb-3">
-                {item.title}
-              </h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {item.description}
-              </p>
-            </StaggerItem>
-          ))}
-        </Stagger>
+  return (
+    <section className="pg-section alt">
+      <div className="hl-grid">
+        <Reveal variant="left">
+          <div className="pg-head" style={{ marginBottom: 40 }}>
+            <p className="pg-eyebrow">Why Julie&apos;s</p>
+            <h2 className="pg-h2">First-class hair care, right here in Shipley</h2>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: 30 }}>
+            {HL_DATA.map((it, i) => (
+              <div key={i} style={{ display: "flex", gap: 20, alignItems: "flex-start" }}>
+                <div
+                  style={{
+                    width: 56,
+                    height: 56,
+                    borderRadius: "50%",
+                    background: "var(--pg-bg)",
+                    border: "1px solid var(--line)",
+                    color: "var(--acc)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flex: "none",
+                  }}
+                >
+                  {it.icon}
+                </div>
+                <div>
+                  <h3 className="pg-h3" style={{ marginBottom: 6, fontSize: 22 }}>
+                    {it.title}
+                  </h3>
+                  <p className="pg-body" style={{ fontSize: 16.5 }}>
+                    {it.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+        <Reveal variant="right" delay={0.1}>
+          {photo}
+        </Reveal>
       </div>
     </section>
   )

@@ -1,102 +1,61 @@
-"use client"
+import { PHONE_HREF, WA_LINK, PhoneIcon, WhatsAppIcon } from "@/components/salon-ui"
+import { Reveal } from "@/components/reveal"
 
-import { motion } from "framer-motion"
-import { Scissors, Sparkles, Link2, Layers, Droplets } from "lucide-react"
-import { FadeIn, Stagger, StaggerItem } from "@/components/motion/fade-in"
-
-const services = [
-  {
-    icon: Scissors,
-    name: "Hairstyling",
-    description: "Expert cuts, blow dries, and creative styling tailored to you.",
-  },
-  {
-    icon: Sparkles,
-    name: "Braids",
-    description: "Box braids, cornrows, and intricate braid styles crafted with precision.",
-  },
-  {
-    icon: Link2,
-    name: "Crochet Extensions",
-    description: "Full, natural-looking crochet installs for lasting volume and length.",
-  },
-  {
-    icon: Layers,
-    name: "Weaving Extensions",
-    description: "Seamless weave installs that blend beautifully with your natural hair.",
-  },
-  {
-    icon: Droplets,
-    name: "Hair Treatments",
-    description: "Nourishing treatments to restore shine, strength, and vitality.",
-  },
+const PRICES_L = [
+  { n: "Wash, Cut & Blow-Dry", p: "from £35" },
+  { n: "Occasion Hairstyling", p: "from £40" },
+  { n: "Box Braids", p: "from £60" },
+  { n: "Knotless Braids", p: "from £70" },
+  { n: "Cornrows", p: "from £30" },
+]
+const PRICES_R = [
+  { n: "Crochet Extensions", p: "from £55" },
+  { n: "Weaving Extensions (full head)", p: "from £80" },
+  { n: "Deep Conditioning Treatment", p: "from £25" },
+  { n: "Protein / Repair Treatment", p: "from £35" },
+  { n: "Kids' Braids & Styles", p: "from £25" },
 ]
 
-export function Services() {
+function PriceCol({ rows }: { rows: { n: string; p: string }[] }) {
   return (
-    <section id="services" className="py-16 md:py-24 scroll-mt-20">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <FadeIn className="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-          <p className="text-primary text-xs font-medium tracking-[0.3em] uppercase mb-3">
-            What We Offer
-          </p>
-          <h2 className="text-3xl md:text-4xl font-serif font-semibold text-foreground mb-4">
-            Our Services
-          </h2>
-          <p className="text-muted-foreground leading-relaxed">
-            From everyday styling to specialist extensions and treatments — call us to discuss your needs and get a personalised quote.
-          </p>
-        </FadeIn>
-
-        {/* Services Grid — 3 top, 2 bottom centred */}
-        <Stagger className="grid md:grid-cols-3 gap-6 md:gap-8" staggerDelay={0.1}>
-          {services.slice(0, 3).map((service, index) => (
-            <StaggerItem key={index}>
-              <ServiceCard service={service} />
-            </StaggerItem>
-          ))}
-        </Stagger>
-
-        <Stagger className="grid md:grid-cols-2 gap-6 md:gap-8 mt-6 md:mt-8 md:max-w-2xl md:mx-auto" staggerDelay={0.1}>
-          {services.slice(3).map((service, index) => (
-            <StaggerItem key={index}>
-              <ServiceCard service={service} />
-            </StaggerItem>
-          ))}
-        </Stagger>
-
-        {/* Pricing note */}
-        <FadeIn delay={0.3}>
-          <p className="text-center text-sm text-muted-foreground mt-10 italic">
-            Pricing varies by style, length, and complexity. Contact us for a personalised quote.
-          </p>
-        </FadeIn>
-      </div>
-    </section>
+    <div>
+      {rows.map((r, i) => (
+        <div key={i} className="price-row">
+          <span className="price-name">{r.n}</span>
+          <span className="price-dots" />
+          <span className="price-val">{r.p}</span>
+        </div>
+      ))}
+    </div>
   )
 }
 
-function ServiceCard({ service }: { service: (typeof services)[0] }) {
+export function Services() {
   return (
-    <motion.div
-      whileHover={{ y: -6 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      className="h-full"
-    >
-      <div className="h-full bg-card border border-border rounded-2xl p-8 flex flex-col gap-4 transition-colors hover:border-primary/40 group">
-        <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center group-hover:bg-primary/10 transition-colors">
-          <service.icon className="w-5 h-5 text-primary" />
-        </div>
-        <div>
-          <h3 className="text-lg font-serif font-semibold text-foreground mb-2">
-            {service.name}
-          </h3>
-          <p className="text-muted-foreground text-sm leading-relaxed">
-            {service.description}
+    <section className="pg-section" id="services">
+      <Reveal>
+        <div className="pg-head" style={{ alignItems: "center", textAlign: "center" }}>
+          <p className="pg-eyebrow">Popular services</p>
+          <h2 className="pg-h2">Our price list</h2>
+          <p className="pg-body" style={{ maxWidth: 560 }}>
+            Hairstyling · Braids · Crochet Extensions · Weaving Extensions · Hair Treatments
           </p>
         </div>
+      </Reveal>
+      <Reveal delay={0.1} className="services-grid">
+        <PriceCol rows={PRICES_L} />
+        <PriceCol rows={PRICES_R} />
+      </Reveal>
+      <div style={{ display: "flex", justifyContent: "center", gap: 14, marginTop: 48, flexWrap: "wrap" }}>
+        <a className="pg-btn pg-btn-gold" href={PHONE_HREF}>
+          <PhoneIcon />
+          Call to book
+        </a>
+        <a className="pg-btn pg-btn-wa" href={WA_LINK} target="_blank" rel="noreferrer">
+          <WhatsAppIcon />
+          Book via WhatsApp
+        </a>
       </div>
-    </motion.div>
+    </section>
   )
 }
