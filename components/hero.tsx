@@ -108,7 +108,7 @@ export function Hero() {
 
       <div className="sl-hero-content" ref={contentRef} style={{ willChange: "transform, opacity" }}>
         <div style={{ maxWidth: 560 }}>
-          <p className="sl-eyebrow track-in" style={{ ["--d" as string]: "0.1s", margin: "0 0 26px" }}>
+          <p className="sl-eyebrow track-in" style={{ ["--d" as string]: "0.1s", margin: "0 0 26px", color: "#fff" }}>
             Shipley · Bradford
           </p>
           <h1 className="sl-h1" style={{ fontSize: "clamp(52px, 9vw, 92px)" }}>
@@ -144,6 +144,7 @@ export function Hero() {
         </div>
       </div>
       <div
+        className="sl-hero-fade"
         style={{
           position: "absolute",
           bottom: 0,

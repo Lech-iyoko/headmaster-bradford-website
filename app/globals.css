@@ -318,17 +318,21 @@ html {
   .pg-header { padding: 0 16px; height: 64px; gap: 10px; }
   .pg-logo { font-size: 17px; white-space: nowrap; }
   .pg-nav { display: none; }
-  .pg-header .pg-btn { padding: 10px 14px !important; font-size: 14px; }
-  .wa-label { display: none; }
+  .pg-header .pg-btn { padding: 10px 16px !important; font-size: 14px; }
   .pg-footer { padding: 48px 22px 30px; }
   .pg-head { margin-bottom: 36px; }
 
-  .sl-hero { height: 600px; }
+  .sl-hero { height: calc(100vh - 64px); height: min(calc(100svh - 64px), 760px); }
   .sl-hero-photo { width: 100%; }
   .sl-hero-content { padding-left: 22px; padding-right: 22px; align-items: flex-end; padding-bottom: 44px; }
-  /* Full-bleed model photo on mobile: drop the desktop side shade, deepen the bottom fade for text legibility */
+  /* Full-bleed model photo on mobile: no solid black anywhere — the desktop side
+     shade and bottom fade go, leaving only a translucent legibility scrim */
   .sl-hero-shade-x { display: none; }
-  .sl-hero-shade-y { background: linear-gradient(to top, var(--slbg) 0%, oklch(0.08 0.01 55 / 0.55) 26%, transparent 60%); }
+  .sl-hero-shade-y { background: linear-gradient(to top, oklch(0.08 0.01 55 / 0.6) 0%, oklch(0.08 0.01 55 / 0.32) 32%, transparent 65%); }
+  .sl-hero-fade { display: none; }
+  /* the lighter scrim needs help where text crosses bright skin */
+  .sl-hero-content { text-shadow: 0 1px 3px oklch(0.08 0.01 55 / 0.45), 0 4px 22px oklch(0.08 0.01 55 / 0.55); }
+  .sl-tagline { color: var(--slgold); }
 
   .hl-grid, .about-grid, .offers-grid, .services-grid,
   .reviews-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; gap: 36px; }
