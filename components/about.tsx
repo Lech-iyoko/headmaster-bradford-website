@@ -11,9 +11,9 @@ export function About() {
             <h2 className="pg-h2">Making Shipley look beautiful, one style at a time</h2>
           </div>
           <p className="pg-body" style={{ marginBottom: 18 }}>
-            At Julie&apos;s Hair Salon every hair type is welcome — from fine, straight hair to curls, coils
+            At Julie&apos;s Hair Salon every hair type is welcome, from fine, straight hair to curls, coils
             and afro textures (types 1&ndash;4). From protective braids and crochet styles to weaving
-            extensions and nourishing treatments, every appointment starts with a personal consultation — so
+            extensions and nourishing treatments, every appointment starts with a personal consultation, so
             you leave with a style that&apos;s truly yours.
           </p>
           <p className="pg-body" style={{ marginBottom: 18 }}>

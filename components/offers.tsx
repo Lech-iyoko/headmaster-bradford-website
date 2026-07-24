@@ -1,7 +1,7 @@
 import { Reveal } from "@/components/reveal"
 
 const OFFERS = [
-  { tag: "New Clients", title: "15% off your first visit", desc: "A little welcome from us — mention this offer when you book." },
+  { tag: "New Clients", title: "15% off your first visit", desc: "A little welcome from us, mention this offer when you book." },
   { tag: "Midweek", title: "Wash, cut & blow-dry £30", desc: "Tuesday to Thursday appointments only." },
   { tag: "Bundle", title: "Braids + treatment, save £10", desc: "Book any braid style with a hair treatment together." },
 ]

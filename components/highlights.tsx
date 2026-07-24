@@ -10,7 +10,7 @@ const HL_DATA = [
   {
     icon: <HeartIcon width={24} height={24} />,
     title: "Every Hair Type Welcome",
-    desc: "From fine and straight to curls, coils and afro textures — Julie styles hair types 1 to 4.",
+    desc: "From fine and straight to curls, coils and afro textures, Julie styles hair types 1 to 4.",
   },
   {
     icon: <SparklesIcon width={24} height={24} />,
