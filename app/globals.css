@@ -163,6 +163,7 @@ html {
   --line: oklch(0.86 0.025 80);
   --card: oklch(0.985 0.008 85);
   --dark: oklch(0.14 0.02 55);
+  --wa: oklch(0.34 0.06 165); /* deep muted pine — WhatsApp's cue without the brand-plugin green */
 
   font-family: var(--slsans);
   background: var(--pg-bg);
@@ -225,7 +226,7 @@ html {
 .pg-btn-dark { background: var(--dark); color: oklch(0.95 0.015 80); }
 .pg-btn-gold { background: var(--acc); color: white; }
 .pg-btn-line { border-color: var(--acc-soft); color: var(--ink); background: transparent; }
-.pg-btn-wa { background: #1FAF57; color: white; }
+.pg-btn-wa { background: var(--wa); color: white; }
 .pg-btn svg { width: 18px; height: 18px; }
 
 /* ---------- header ---------- */
@@ -279,7 +280,7 @@ html {
 
 /* ---------- responsive layout grids ---------- */
 .hl-grid { display: grid; grid-template-columns: 1fr 420px; gap: 88px; align-items: center; }
-.about-grid { display: grid; grid-template-columns: 1fr 480px; gap: 96px; align-items: center; }
+.about-grid { display: grid; grid-template-columns: 1fr 560px; gap: 96px; align-items: center; }
 .about-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .offers-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 .services-grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 72px; max-width: 1040px; margin: 0 auto; }
@@ -310,7 +311,7 @@ html {
   .pg-footer { padding: 64px 48px 36px; }
   .gallery-grid { grid-template-columns: repeat(3, 1fr); }
   .hl-grid { grid-template-columns: 1fr 360px; gap: 56px; }
-  .about-grid { grid-template-columns: 1fr 400px; gap: 56px; }
+  .about-grid { grid-template-columns: 1fr 460px; gap: 56px; }
 }
 
 @media (max-width: 768px) {

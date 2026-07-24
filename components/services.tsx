@@ -2,18 +2,18 @@ import { PHONE_HREF, WA_LINK, PhoneIcon, WhatsAppIcon } from "@/components/salon
 import { Reveal } from "@/components/reveal"
 
 const PRICES_L = [
-  { n: "Wash, Cut & Blow-Dry", p: "from £35" },
-  { n: "Occasion Hairstyling", p: "from £40" },
-  { n: "Box Braids", p: "from £60" },
-  { n: "Knotless Braids", p: "from £70" },
-  { n: "Cornrows", p: "from £30" },
+  { n: "Weave", p: "from £65" },
+  { n: "Remove Weave & Wash", p: "£25" },
+  { n: "Single Braids", p: "from £110" },
+  { n: "Remove Single Braids & Wash", p: "£45" },
+  { n: "Wash & Dry", p: "£20" },
 ]
 const PRICES_R = [
-  { n: "Crochet Extensions", p: "from £55" },
-  { n: "Weaving Extensions (full head)", p: "from £80" },
-  { n: "Deep Conditioning Treatment", p: "from £25" },
-  { n: "Protein / Repair Treatment", p: "from £35" },
-  { n: "Kids' Braids & Styles", p: "from £25" },
+  { n: "Ladies Cornrows with Extensions", p: "from £45" },
+  { n: "Ladies Natural Hair Cornrows", p: "£35" },
+  { n: "Boys Cornrows", p: "from £35" },
+  { n: "Crochet Weave", p: "£75" },
+  { n: "Hair Relaxing", p: "£60" },
 ]
 
 function PriceCol({ rows }: { rows: { n: string; p: string }[] }) {
@@ -38,7 +38,7 @@ export function Services() {
           <p className="pg-eyebrow">Popular services</p>
           <h2 className="pg-h2">Our price list</h2>
           <p className="pg-body" style={{ maxWidth: 560 }}>
-            Hairstyling · Braids · Crochet Extensions · Weaving Extensions · Hair Treatments
+            Weaves · Braids · Cornrows · Crochet · Hair Relaxing
           </p>
         </div>
       </Reveal>
