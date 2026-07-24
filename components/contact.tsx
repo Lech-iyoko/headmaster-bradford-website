@@ -11,11 +11,11 @@ import { Reveal } from "@/components/reveal"
 
 const HOURS: [string, string][] = [
   ["Monday", "Closed"],
-  ["Tuesday", "9:30 AM – 6:00 PM"],
-  ["Wednesday", "9:30 AM – 6:00 PM"],
-  ["Thursday", "9:30 AM – 6:00 PM"],
-  ["Friday", "9:30 AM – 6:00 PM"],
-  ["Saturday", "9:00 AM – 5:00 PM"],
+  ["Tuesday", "10:30 AM – 5:00 PM"],
+  ["Wednesday", "10:30 AM – 5:00 PM"],
+  ["Thursday", "10:30 AM – 5:00 PM"],
+  ["Friday", "10:30 AM – 5:00 PM"],
+  ["Saturday", "10:00 AM – 5:30 PM"],
   ["Sunday", "Closed"],
 ]
 

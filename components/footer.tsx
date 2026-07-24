@@ -18,9 +18,9 @@ export function Footer() {
             Beautiful Hair, Beautiful You
           </p>
           <p style={{ font: "400 15px/1.7 var(--slsans)", margin: 0, color: "oklch(0.65 0.02 80)" }}>
-            Hairstyling · Braids · Crochet Extensions
+            Weaves · Braids · Cornrows
             <br />
-            Weaving Extensions · Hair Treatments
+            Crochet · Hair Relaxing
           </p>
         </div>
         <div>
@@ -40,9 +40,9 @@ export function Footer() {
         <div>
           <p className="foot-h">Hours</p>
           <p style={{ font: "400 15px/1.9 var(--slsans)", margin: 0, color: "oklch(0.65 0.02 80)" }}>
-            Tue – Fri&ensp;9:30 AM – 6:00 PM
+            Tue – Fri&ensp;10:30 AM – 5:00 PM
             <br />
-            Saturday&ensp;9:00 AM – 5:00 PM
+            Saturday&ensp;10:00 AM – 5:30 PM
             <br />
             Sun &amp; Mon&ensp;Closed
           </p>

@@ -23,7 +23,7 @@ export const IMG = {
   p13: "/gallery/p13.webp",
   p14: "/gallery/p14.webp",
   p15: "/gallery/p15.webp",
-  julie: "/gallery/julie.webp",
+  julie: "/gallery/julie-v2.webp",
 }
 
 type IconProps = React.SVGProps<SVGSVGElement>
