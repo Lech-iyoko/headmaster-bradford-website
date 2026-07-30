@@ -163,7 +163,7 @@ html {
   --line: oklch(0.86 0.025 80);
   --card: oklch(0.985 0.008 85);
   --dark: oklch(0.14 0.02 55);
-  --wa: oklch(0.34 0.06 165); /* deep muted pine — WhatsApp's cue without the brand-plugin green */
+  --wa: oklch(0.14 0.02 55); /* matches --dark exactly, so every CTA reads as one family */
 
   font-family: var(--slsans);
   background: var(--pg-bg);
@@ -292,7 +292,7 @@ html {
 .reviews-stat-label a { color: var(--acc); font-weight: 600; text-decoration: none; }
 .reviews-stat-label a:hover { text-decoration: underline; }
 .reviews-single { max-width: 640px; margin: 0 auto; text-align: center; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 64px; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; max-width: 780px; margin: 0 auto; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 64px; }
 
 /* ---------- hero shell ---------- */

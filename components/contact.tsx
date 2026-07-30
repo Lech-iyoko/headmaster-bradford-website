@@ -1,12 +1,4 @@
-import {
-  MAPS_LINK,
-  PHONE_DISPLAY,
-  PHONE_HREF,
-  WA_LINK,
-  PhoneIcon,
-  PinIcon,
-  WhatsAppIcon,
-} from "@/components/salon-ui"
+import { MAPS_LINK, PinIcon } from "@/components/salon-ui"
 import { Reveal } from "@/components/reveal"
 
 const HOURS: [string, string][] = [
@@ -24,53 +16,11 @@ export function Contact() {
     <section className="pg-section alt" id="contact">
       <Reveal>
         <div className="pg-head">
-          <p className="pg-eyebrow">Visit us</p>
-          <h2 className="pg-h2">Contact &amp; opening hours</h2>
+          <h2 className="pg-h2">Opening hours</h2>
         </div>
       </Reveal>
       <div className="contact-grid">
-        <Reveal delay={0}>
-          <h3 className="pg-h3" style={{ marginBottom: 20 }}>
-            Get in touch
-          </h3>
-          <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
-            <div style={{ display: "flex", gap: 12, alignItems: "flex-start", color: "var(--ink-soft)" }}>
-              <span style={{ color: "var(--acc)", marginTop: 2 }}>
-                <PinIcon width={18} height={18} />
-              </span>
-              <p className="pg-body" style={{ fontSize: 16 }}>
-                68b Briggate, Shipley
-                <br />
-                Bradford, BD17 5EP
-              </p>
-            </div>
-            <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-              <span style={{ color: "var(--acc)" }}>
-                <PhoneIcon width={18} height={18} />
-              </span>
-              <a
-                className="pg-body"
-                style={{ fontSize: 16, color: "var(--ink)", textDecoration: "none", fontWeight: 600 }}
-                href={PHONE_HREF}
-              >
-                {PHONE_DISPLAY}
-              </a>
-            </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 12, marginTop: 10 }}>
-              <a className="pg-btn pg-btn-wa" href={WA_LINK} target="_blank" rel="noreferrer">
-                <WhatsAppIcon />
-                Chat on WhatsApp
-              </a>
-              <a className="pg-btn pg-btn-line" href={PHONE_HREF}>
-                Call to book
-              </a>
-            </div>
-          </div>
-        </Reveal>
         <Reveal delay={0.08}>
-          <h3 className="pg-h3" style={{ marginBottom: 12 }}>
-            Opening hours
-          </h3>
           {HOURS.map(([d, t], i) => (
             <div key={i} className="hrs-row">
               <span className="d">{d}</span>

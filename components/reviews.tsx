@@ -1,8 +1,6 @@
 import { Reveal } from "@/components/reveal"
 
-const FB_PAGE = "https://www.facebook.com/profile.php?id=100028607544927"
-
-// Real Facebook reviews (lightly tidied for spelling/caps, wording unchanged)
+// Real client reviews (lightly tidied for spelling/caps, wording unchanged)
 const REVIEWS = [
   {
     q: "Definitely found a new place to get my weave in, my hair looks gorgeous… The staff was very welcoming and polite. Great customer service. I left the shop a very satisfied customer.",
@@ -30,20 +28,14 @@ export function Reviews() {
       <Reveal delay={0.1}>
         <div className="reviews-stat">
           <span className="reviews-stat-number">96%</span>
-          <span className="reviews-stat-label">
-            of clients recommend Julie
-            <br />
-            <a href={FB_PAGE} target="_blank" rel="noopener noreferrer">
-              from 24 reviews on Facebook
-            </a>
-          </span>
+          <span className="reviews-stat-label">client satisfaction rate</span>
         </div>
       </Reveal>
       <div className="reviews-grid">
         {REVIEWS.map((r, i) => (
           <Reveal key={r.n} delay={0.15 + i * 0.1} className="tst-card">
             <p className="tst-quote">“{r.q}”</p>
-            <span className="tst-name">{r.n}, via Facebook</span>
+            <span className="tst-name">{r.n}</span>
           </Reveal>
         ))}
       </div>

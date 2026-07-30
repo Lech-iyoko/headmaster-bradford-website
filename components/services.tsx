@@ -1,4 +1,3 @@
-import { PHONE_HREF, WA_LINK, PhoneIcon, WhatsAppIcon } from "@/components/salon-ui"
 import { Reveal } from "@/components/reveal"
 
 const PRICES_L = [
@@ -46,16 +45,6 @@ export function Services() {
         <PriceCol rows={PRICES_L} />
         <PriceCol rows={PRICES_R} />
       </Reveal>
-      <div style={{ display: "flex", justifyContent: "center", gap: 14, marginTop: 48, flexWrap: "wrap" }}>
-        <a className="pg-btn pg-btn-gold" href={PHONE_HREF}>
-          <PhoneIcon />
-          Call to book
-        </a>
-        <a className="pg-btn pg-btn-wa" href={WA_LINK} target="_blank" rel="noreferrer">
-          <WhatsAppIcon />
-          Book via WhatsApp
-        </a>
-      </div>
     </section>
   )
 }
