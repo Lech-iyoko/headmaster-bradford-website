@@ -55,6 +55,7 @@ export function Gallery() {
               <img
                 src={image.src}
                 alt={image.alt}
+                loading="lazy"
                 style={{ objectPosition: "50% 20%", transition: "transform 0.5s ease" }}
                 className="group-hover:scale-105"
               />

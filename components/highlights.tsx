@@ -34,6 +34,7 @@ export function Highlights() {
         <img
           src={IMG.p1}
           alt="Signature styling at Julie's"
+          loading="lazy"
           style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
         />
       </div>

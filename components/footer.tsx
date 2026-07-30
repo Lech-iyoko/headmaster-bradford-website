@@ -11,7 +11,7 @@ export function Footer() {
           <p
             style={{
               font: "italic 400 17px/1.5 var(--slserif)",
-              color: "oklch(0.72 0.12 82 / 0.7)",
+              color: "oklch(0.78 0.13 82)",
               margin: "0 0 18px",
             }}
           >
@@ -30,9 +30,16 @@ export function Footer() {
             <br />
             Bradford, BD17 5EP
             <br />
-            <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
+            <a href={PHONE_HREF} style={{ display: "inline-block", padding: "6px 0" }}>
+              {PHONE_DISPLAY}
+            </a>
             <br />
-            <a href={WA_LINK} target="_blank" rel="noreferrer">
+            <a
+              href={WA_LINK}
+              target="_blank"
+              rel="noreferrer"
+              style={{ display: "inline-block", padding: "6px 0" }}
+            >
               WhatsApp us
             </a>
           </p>
@@ -58,10 +65,10 @@ export function Footer() {
           gap: 10,
         }}
       >
-        <span style={{ font: "400 13px/1 var(--slsans)", color: "oklch(0.55 0.02 80)" }}>
+        <span style={{ font: "400 13px/1 var(--slsans)", color: "oklch(0.62 0.03 78)" }}>
           {new Date().getFullYear()} © Julie&apos;s Hair Salon. All rights reserved.
         </span>
-        <span style={{ font: "400 13px/1 var(--slsans)", color: "oklch(0.55 0.02 80)" }}>
+        <span style={{ font: "400 13px/1 var(--slsans)", color: "oklch(0.62 0.03 78)" }}>
           68b Briggate, Shipley, Bradford
         </span>
       </div>

@@ -158,8 +158,8 @@ html {
   --pg-alt: oklch(0.975 0.012 82);
   --ink: oklch(0.3 0.03 55);
   --ink-soft: oklch(0.47 0.03 60);
-  --acc: oklch(0.56 0.12 75);
-  --acc-soft: oklch(0.56 0.12 75 / 0.5);
+  --acc: oklch(0.5 0.12 75);
+  --acc-soft: oklch(0.5 0.12 75 / 0.5);
   --line: oklch(0.86 0.025 80);
   --card: oklch(0.985 0.008 85);
   --dark: oklch(0.14 0.02 55);
@@ -199,7 +199,7 @@ html {
 @keyframes sl-track { from { opacity: 0; letter-spacing: 0.6em; } to { opacity: 1; letter-spacing: 0.35em; } }
 .anim-in .draw-x { animation: sl-draw 1s cubic-bezier(0.22, 1, 0.36, 1) both; animation-delay: var(--d, 0s); transform-origin: left center; }
 @keyframes sl-draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-.anim-in .kenburns { animation: sl-kenburns 6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.anim-in .kenburns { animation: sl-kenburns 1.4s cubic-bezier(0.16, 1, 0.3, 1) both; }
 @keyframes sl-kenburns { from { transform: scale(1.1) translateX(2%); } to { transform: scale(1.02) translateX(0); } }
 .glow-breathe { animation: sl-breathe 7s ease-in-out infinite; }
 @keyframes sl-breathe { 0%, 100% { opacity: 0.75; } 50% { opacity: 1; } }
@@ -334,6 +334,9 @@ html {
   /* the lighter scrim needs help where text crosses bright skin */
   .sl-hero-content { text-shadow: 0 1px 3px oklch(0.08 0.01 55 / 0.45), 0 4px 22px oklch(0.08 0.01 55 / 0.55); }
   .sl-tagline { color: var(--slgold); }
+  /* the animated turbulence/displacement filter is expensive to repaint every
+     frame on phone GPUs; drop to the plain static photo underneath instead */
+  .hairflow-layer { display: none !important; }
 
   .hl-grid, .about-grid, .offers-grid, .services-grid,
   .reviews-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; gap: 36px; }

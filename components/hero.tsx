@@ -49,12 +49,13 @@ function HairFlow() {
         </defs>
       </svg>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={HERO_IMG} alt="" style={imgCss} />
+      <img src={HERO_IMG} alt="" fetchPriority="high" style={imgCss} />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         className="hairflow-layer"
         src={HERO_IMG}
         alt="Voluminous, glossy styling at Julie's Hair Salon"
+        fetchPriority="high"
         style={{ ...imgCss, filter: "url(#hairFlow)", WebkitMaskImage: mask, maskImage: mask }}
       />
     </div>

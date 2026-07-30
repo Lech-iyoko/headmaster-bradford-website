@@ -41,6 +41,7 @@ export function About() {
             <img
               src={IMG.julie}
               alt="Julie, your Shipley hair stylist"
+              loading="lazy"
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "50% 15%" }}
             />
           </div>
@@ -49,6 +50,7 @@ export function About() {
             <img
               src={IMG.p6}
               alt="Elegant styling at Julie's Hair Salon"
+              loading="lazy"
               style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }}
             />
           </div>
